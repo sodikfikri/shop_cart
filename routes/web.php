@@ -15,8 +15,8 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('login');
+})->name('login');
 
 // Route::get('/shoping', function () {
 //     return view('shoping_cart');
@@ -30,6 +30,6 @@ Route::group(['middleware' => ['hasAuth']], function () {
 
 Route::post('/auth', [AuthController::class, 'login'])->name('auth-login');
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+// Route::get('/login', function () {
+//     return view('login');
+// })->name('login');
